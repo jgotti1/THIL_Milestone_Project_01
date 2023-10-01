@@ -1,8 +1,8 @@
 //Idle animation function
 
 const girl = document.getElementById("girl");
-idleImageNumber = 0;
-idleAnimationNumber = 0;
+let idleImageNumber = 0;
+let idleAnimationNumber = 0;
 
 function idleAnimation(){
     idleImageNumber = idleImageNumber + 1;
@@ -19,13 +19,13 @@ idleAnimationNumber = setInterval(idleAnimation, 200);
 
 //run animaition function
 
-runImageNumber = 0;
-runAnimationNumber = 0;
+let runImageNumber = 0;
+let runAnimationNumber = 0;
 function runAnimation()
 {
 runImageNumber = runImageNumber + 1;
-if( idleImageNumber == 11){
-    idleImageNumber = 1;
+if( runImageNumber == 9){
+    runImageNumber = 1;
 }
 girl.src = "resources/Run (" + runImageNumber + ").png";
 }
@@ -48,4 +48,19 @@ if(key == 13){
        runAnimationStart();
     }
   }
+
+if( moveBackgroundAnimationId == 0){
+    moveBackgroundAnimationId = setInterval(moveBackground,100);   
+  }
+}
+
+//move background function
+
+let backgroundImagePositionX = 0;
+let moveBackgroundAnimationId = 0;
+
+function moveBackground()
+{
+    backgroundImagePositionX= backgroundImagePositionX - 20;
+    document.getElementById("background").style.backgroundPositionX = backgroundImagePositionX + "px";
 }

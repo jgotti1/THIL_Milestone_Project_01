@@ -6,6 +6,7 @@
     height: 100vh;
     background-image: url("resources/Background.jpg");
     background-size: cover;
+    background-repeat: repeat-x;
 }
 .girl
 {
