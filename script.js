@@ -1,8 +1,8 @@
 //Idle animation function
 
 const girl = document.getElementById("girl");
-let idleImageNumber = 0;
-let idleAnimationNumber = 0;
+let idleImageNumber = 1;    //globle variables   
+let idleAnimationNumber = 0; //globle variables  
 
 function idleAnimation(){
     idleImageNumber = idleImageNumber + 1;
@@ -19,8 +19,8 @@ idleAnimationNumber = setInterval(idleAnimation, 200);
 
 //run animaition function
 
-let runImageNumber = 0;
-let runAnimationNumber = 0;
+let runImageNumber = 1; //globle variables  
+let runAnimationNumber = 0; //globle variables  
 function runAnimation()
 {
 runImageNumber = runImageNumber + 1;
@@ -35,28 +35,64 @@ function runAnimationStart(){
     runAnimationNumber = setInterval(runAnimation, 100);
     clearInterval(idleAnimationNumber);
 }
-//run charactor with enterkey press
+
+//jump animation function
+let jumpImageNumber = 1;     //globle variables
+let jumpAnimationNumber = 0; //globle variables
+
+ function jumpAnimation(){
+    jumpImageNumber = jumpImageNumber + 1;
+    if(jumpImageNumber == 11){
+        jumpImageNumber = 1;
+        clearInterval(jumpAnimationNumber); //stop jumpAnimation when it is 11
+        jumpAnimationNumber = 0;
+        runImageNumber = 0;
+        runAnimationStart(); //run charctor again
+    }
+
+    girl.src = "resources/jump (" +jumpImageNumber+ ").png";
+ }
+ //jump animation  start function   
+ function jumpAnimationStart(){
+    clearInterval(idleAnimationNumber); //stop running idle animation when jump animation start
+    runImageNumber = 0;
+    clearInterval(runAnimationNumber); //stop run animation
+    jumpAnimationNumber = setInterval(jumpAnimation,100);//start jump animation
+}
+
+//run charactor with key press
 
 function keyCheck(event){
 //alert(event.which);
-//enter =13;
+//enter =13
+//space =32
 
 const key=event.which;
-
+//run charactor eith enter key press
 if(key == 13){
     if(runAnimationNumber == 0){
        runAnimationStart();
-    }
+     }
+  
+if(moveBackgroundAnimationId == 0){
+    moveBackgroundAnimationId = setInterval(moveBackground,100);   
+     }
   }
 
-if( moveBackgroundAnimationId == 0){
-    moveBackgroundAnimationId = setInterval(moveBackground,100);   
+ //jump charactor with space bar
+ if(key == 32){
+    if(jumpAnimationNumber == 0){
+       jumpAnimationStart();
+     }
+    if(moveBackgroundAnimationId == 0){
+        moveBackgroundAnimationId = setInterval(moveBackground,100);   
+     }  
   }
 }
 
 //move background function
 
-let backgroundImagePositionX = 0;
+let backgroundImagePositionX = 0;  
 let moveBackgroundAnimationId = 0;
 
 function moveBackground()
