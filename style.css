@@ -14,14 +14,19 @@
 {
     height: 250px;
     margin-top: 620px;
+    margin-left: 200px;
     position: absolute;
 }
 .obs{
-    width: 70px;
-    height: 70px;
-    background-color: black;
+    width: 150px;
+    height: 150px;
+    /* background-color: black;  */
     position: absolute;
     margin-top: 790px;
+    background-image: url("resources/boar_obs2.gif");
+    background-size: contain;
+    background-repeat: no-repeat;
+
 }
 
    

@@ -24,9 +24,9 @@ let runAnimationNumber = 0; //globle variables
 function runAnimation()
 {
 runImageNumber = runImageNumber + 1;
-if( runImageNumber == 9){
+if(runImageNumber == 9){
     runImageNumber = 1;
-}
+    }
 girl.src = "resources/Run (" + runImageNumber + ").png";
 }
 
@@ -85,10 +85,12 @@ if(key == 13){
     if(runAnimationNumber == 0){
        runAnimationStart();
      }
-  
-if(moveBackgroundAnimationId == 0){
-    moveBackgroundAnimationId = setInterval(moveBackground,100);   
+    if(moveBackgroundAnimationId == 0){
+       moveBackgroundAnimationId = setInterval(moveBackground,100);   
      }
+    //  if(obsAnimationId == 0){
+    //     obsAnimationId = setInterval(ObsAnimation,100);
+    //  }
   }
 
  //jump charactor with space bar
@@ -96,10 +98,13 @@ if(moveBackgroundAnimationId == 0){
     if(jumpAnimationNumber == 0){
        jumpAnimationStart();
      }
+    }
     if(moveBackgroundAnimationId == 0){
         moveBackgroundAnimationId = setInterval(moveBackground,100);   
      }  
-  }
+    // if(obsAnimationId == 0){
+    //     obsAnimationId = setInterval(ObsAnimation,100);
+    //  }
 }
 
 //move background function
@@ -111,12 +116,15 @@ function moveBackground()
 {
     backgroundImagePositionX= backgroundImagePositionX - 20;
     document.getElementById("background").style.backgroundPositionX = backgroundImagePositionX + "px";
+    const xPosition = gif.offsetLeft;
+    leftPosition += 1; // Adjust the speed as needed
+   document.getElementById("boar_obs2").style.left = xPosition-40 + "px";
 }
 
 //create obstacles function
 
-// let obsMarginLeft = 500;
-let obsMarginLeft = 1950; //stop showing obstacles when game start 
+ //let obsMarginLeft = 500;
+let obsMarginLeft = 500; //stop showing obstacles when game start  
 
 function createObstacles()
 {
@@ -128,16 +136,28 @@ function createObstacles()
    obs.className = "obs";//assign class name 
    document.getElementById("background").appendChild(obs);
    obs.style.marginLeft = obsMarginLeft + "px";
+   obs.id ="obs" + i;
 
    //obsMarginLeft =obsMarginLeft + 1000; //add distance in between obstacles
     if(i<5)
     {
-        obsMarginLeft =obsMarginLeft + 500; 
+        obsMarginLeft =obsMarginLeft + 1000; 
     }
     if(i>=5)
     {
-        obsMarginLeft =obsMarginLeft + 250; 
+        obsMarginLeft =obsMarginLeft + 500; 
     }
 
         }
 }
+
+let obsAnimationId = 0;
+// function ObsAnimation(){
+//     for (let i=0; i<10; i++) 
+//         {
+//     let obs = document.getElementById("obs" + i);
+//     let currentMarginLeft =getComputedStyle(obs).marginLeft;
+//     let newMarginLeft = parseInt(currentMarginLeft) - 25;
+//     obs.style.marginLeft = newMarginLeft + "px";
+//         }    
+// }
