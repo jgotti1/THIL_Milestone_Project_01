@@ -39,9 +39,21 @@ function runAnimationStart(){
 //jump animation function
 let jumpImageNumber = 1;     //globle variables
 let jumpAnimationNumber = 0; //globle variables
-
+let girlMarginTop = 620;
  function jumpAnimation(){
     jumpImageNumber = jumpImageNumber + 1;
+
+    if(jumpImageNumber <= 6)
+     {
+        girlMarginTop = girlMarginTop - 20;
+        girl.style.marginTop = girlMarginTop + "px";
+     }
+     if(jumpImageNumber >= 7)
+     {
+        girlMarginTop = girlMarginTop + 20;
+        girl.style.marginTop = girlMarginTop + "px";
+     }
+
     if(jumpImageNumber == 11){
         jumpImageNumber = 1;
         clearInterval(jumpAnimationNumber); //stop jumpAnimation when it is 11
@@ -67,7 +79,7 @@ function keyCheck(event){
 //enter =13
 //space =32
 
-const key=event.which;
+const key = event.which;
 //run charactor eith enter key press
 if(key == 13){
     if(runAnimationNumber == 0){
@@ -99,4 +111,33 @@ function moveBackground()
 {
     backgroundImagePositionX= backgroundImagePositionX - 20;
     document.getElementById("background").style.backgroundPositionX = backgroundImagePositionX + "px";
+}
+
+//create obstacles function
+
+// let obsMarginLeft = 500;
+let obsMarginLeft = 1950; //stop showing obstacles when game start 
+
+function createObstacles()
+{
+
+    for (let i=0; i<=10; i++) //create 10 obstacles
+        {
+        
+   let obs = document.createElement("div");//create javascript div 
+   obs.className = "obs";//assign class name 
+   document.getElementById("background").appendChild(obs);
+   obs.style.marginLeft = obsMarginLeft + "px";
+
+   //obsMarginLeft =obsMarginLeft + 1000; //add distance in between obstacles
+    if(i<5)
+    {
+        obsMarginLeft =obsMarginLeft + 500; 
+    }
+    if(i>=5)
+    {
+        obsMarginLeft =obsMarginLeft + 250; 
+    }
+
+        }
 }

@@ -7,12 +7,21 @@
     background-image: url("resources/Background.jpg");
     background-size: cover;
     background-repeat: repeat-x;
+    overflow-x: hidden;
+    position: absolute;
 }
 .girl
 {
     height: 250px;
     margin-top: 620px;
     position: absolute;
+}
+.obs{
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    position: absolute;
+    margin-top: 790px;
 }
 
    
