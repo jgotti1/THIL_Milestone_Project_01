@@ -30,7 +30,7 @@ if(runImageNumber == 9){
 girl.src = "resources/Run (" + runImageNumber + ").png";
 }
 
-//run animation start funtion
+//run animation start function
 function runAnimationStart(){
     runAnimationNumber = setInterval(runAnimation, 100);
     clearInterval(idleAnimationNumber);
@@ -80,7 +80,7 @@ function keyCheck(event){
 //space =32
 
 const key = event.which;
-//run charactor eith enter key press
+//run charactor with enter key press
 if(key == 13){
     if(runAnimationNumber == 0){
        runAnimationStart();
@@ -88,9 +88,9 @@ if(key == 13){
     if(moveBackgroundAnimationId == 0){
        moveBackgroundAnimationId = setInterval(moveBackground,100);   
      }
-    //  if(obsAnimationId == 0){
-    //     obsAnimationId = setInterval(ObsAnimation,100);
-    //  }
+     if(obsAnimationId == 0){
+        obsAnimationId = setInterval(ObsAnimation,100);
+     }
   }
 
  //jump charactor with space bar
@@ -102,9 +102,9 @@ if(key == 13){
     if(moveBackgroundAnimationId == 0){
         moveBackgroundAnimationId = setInterval(moveBackground,100);   
      }  
-    // if(obsAnimationId == 0){
-    //     obsAnimationId = setInterval(ObsAnimation,100);
-    //  }
+    if(obsAnimationId == 0){
+        obsAnimationId = setInterval(ObsAnimation,100);
+     }
 }
 
 //move background function
@@ -116,15 +116,15 @@ function moveBackground()
 {
     backgroundImagePositionX= backgroundImagePositionX - 20;
     document.getElementById("background").style.backgroundPositionX = backgroundImagePositionX + "px";
-    const xPosition = gif.offsetLeft;
-    leftPosition += 1; // Adjust the speed as needed
-   document.getElementById("boar_obs2").style.left = xPosition-40 + "px";
+   // const xPosition = gif.offsetLeft;
+//     leftPosition += 1; // Adjust the speed as needed
+//    document.getElementById("boar_obs2").style.left = xPosition-40 + "px";
 }
 
 //create obstacles function
 
  //let obsMarginLeft = 500;
-let obsMarginLeft = 500; //stop showing obstacles when game start  
+let obsMarginLeft = 1920; //stop showing obstacles when game start  
 
 function createObstacles()
 {
@@ -152,12 +152,12 @@ function createObstacles()
 }
 
 let obsAnimationId = 0;
-// function ObsAnimation(){
-//     for (let i=0; i<10; i++) 
-//         {
-//     let obs = document.getElementById("obs" + i);
-//     let currentMarginLeft =getComputedStyle(obs).marginLeft;
-//     let newMarginLeft = parseInt(currentMarginLeft) - 25;
-//     obs.style.marginLeft = newMarginLeft + "px";
-//         }    
-// }
+function ObsAnimation(){
+    for (let i=0; i<10; i++) 
+        {
+    let obs = document.getElementById("obs" + i);
+    let currentMarginLeft =getComputedStyle(obs).marginLeft;
+    let newMarginLeft = parseInt(currentMarginLeft) - 25;
+    obs.style.marginLeft = newMarginLeft + "px";
+        }    
+}
