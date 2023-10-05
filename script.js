@@ -27,42 +27,45 @@ runImageNumber = runImageNumber + 1;
 if(runImageNumber == 9){
     runImageNumber = 1;
     }
-girl.src = "resources/Run (" + runImageNumber + ").png";
+girl.src = "resources/Run (" + runImageNumber + ").png"; //link images related to run
 }
 
 //run animation start function
 function runAnimationStart(){
-    runAnimationNumber = setInterval(runAnimation, 100);
-    clearInterval(idleAnimationNumber);
+    runAnimationNumber = setInterval(runAnimation, 100);//calling runAnimation function
+    clearInterval(idleAnimationNumber);//stop idleAnimation function when run AnimationStart
 }
 
 //jump animation function
 let jumpImageNumber = 1;     //globle variables
 let jumpAnimationNumber = 0; //globle variables
 let girlMarginTop = 620;
+
  function jumpAnimation(){
     jumpImageNumber = jumpImageNumber + 1;
 
-    if(jumpImageNumber <= 6)
+    //fly
+    if(jumpImageNumber <= 5)
      {
-        girlMarginTop = girlMarginTop - 20;
+        girlMarginTop = girlMarginTop - 40;
         girl.style.marginTop = girlMarginTop + "px";
      }
-     if(jumpImageNumber >= 7)
+     //landing
+     if(jumpImageNumber >= 6)
      {
-        girlMarginTop = girlMarginTop + 20;
+        girlMarginTop = girlMarginTop + 40;
         girl.style.marginTop = girlMarginTop + "px";
      }
-
-    if(jumpImageNumber == 11){
+     if(jumpImageNumber == 11){
         jumpImageNumber = 1;
         clearInterval(jumpAnimationNumber); //stop jumpAnimation when it is 11
         jumpAnimationNumber = 0;
         runImageNumber = 0;
         runAnimationStart(); //run charctor again
-    }
 
-    girl.src = "resources/jump (" +jumpImageNumber+ ").png";
+    }
+    
+    girl.src = "resources/jump (" +jumpImageNumber+ ").png"; //link images related to jump
  }
  //jump animation  start function   
  function jumpAnimationStart(){
@@ -86,10 +89,10 @@ if(key == 13){
        runAnimationStart();
      }
     if(moveBackgroundAnimationId == 0){
-       moveBackgroundAnimationId = setInterval(moveBackground,100);   
+       moveBackgroundAnimationId = setInterval(moveBackground,100);   //calling moveBackground function
      }
      if(obsAnimationId == 0){
-        obsAnimationId = setInterval(ObsAnimation,100);
+        obsAnimationId = setInterval(ObsAnimation,100); //calling obsAnimation function to start 100 miliseconds
      }
   }
 
@@ -100,10 +103,10 @@ if(key == 13){
      }
     }
     if(moveBackgroundAnimationId == 0){
-        moveBackgroundAnimationId = setInterval(moveBackground,100);   
+        moveBackgroundAnimationId = setInterval(moveBackground,100);    //calling moveBackground function
      }  
     if(obsAnimationId == 0){
-        obsAnimationId = setInterval(ObsAnimation,100);
+        obsAnimationId = setInterval(ObsAnimation,100); //calling obsAnimation function to start 100 miliseconds
      }
 }
 
@@ -128,7 +131,6 @@ let obsMarginLeft = 1920; //stop showing obstacles when game start
 
 function createObstacles()
 {
-
     for (let i=0; i<=10; i++) //create 10 obstacles
         {
         
@@ -139,15 +141,14 @@ function createObstacles()
    obs.id ="obs" + i;
 
    //obsMarginLeft =obsMarginLeft + 1000; //add distance in between obstacles
-    if(i<5)
+    if(i < 5)
     {
-        obsMarginLeft =obsMarginLeft + 1000; 
+        obsMarginLeft = obsMarginLeft + 1000; 
     }
-    if(i>=5)
+    if(i >= 5)
     {
-        obsMarginLeft =obsMarginLeft + 500; 
+        obsMarginLeft = obsMarginLeft + 500; 
     }
-
         }
 }
 
@@ -159,5 +160,37 @@ function ObsAnimation(){
     let currentMarginLeft =getComputedStyle(obs).marginLeft;
     let newMarginLeft = parseInt(currentMarginLeft) - 25;
     obs.style.marginLeft = newMarginLeft + "px";
+
+    if(newMarginLeft >= -100  & newMarginLeft <= 100){
+        if(girlMarginTop > 550){
+        clearInterval(obsAnimationId);
+
+        clearInterval(runAnimationNumber);
+        runAnimationNumber = -1;
+
+        clearInterval(jumpAnimationNumber);
+        jumpAnimationNumber = -1;
+
+        clearInterval(moveBackgroundAnimationId);
+        moveBackgroundAnimationId = -1;
+
+        deadAnimationNumber = setInterval( girlDeadAnimation,100); //calling girlDeadAnimation function to start 100 miliseconds
+      }
+
+    }
         }    
+}
+
+//Dead animation function
+let deadImageNumber = 1;
+let deadAnimationNumber = 0;
+
+function girlDeadAnimation()
+{
+    deadImageNumber =  deadImageNumber + 1;
+
+    if(deadImageNumber == 11){
+        deadImageNumber = 10;
+    }
+    girl.src = "resources/Dead (" + deadImageNumber + ").png"; //link images related to dead
 }
