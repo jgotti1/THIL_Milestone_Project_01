@@ -197,6 +197,14 @@ function girlDeadAnimation()
 
     if(deadImageNumber == 11){
         deadImageNumber = 10;
+
+        document.getElementById("gameOver").style.visibility ="visible"; //when dead visible end div
+        document.getElementById("endScore").innerHTML = score; //get endScore div
     }
     girl.src = "resources/Dead (" + deadImageNumber + ").png"; //link images related to dead
+}
+
+function reload()
+{
+    location.reload();//reload page again when button click
 }

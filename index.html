@@ -9,8 +9,16 @@
 <body class="body" onload="idleAnimationStart(); createObstacles();"  onkeypress="keyCheck(event);">
   <div class="background" id="background">
        <img src="resources/Idle (1).png" class="girl" id="girl"/>
-        <div class="score" id="score">0</div>
+        <div class="score" id="score"> 0</div>
   </div>
+
+  <div class="gameOver" id="gameOver">
+        <div style="color:rgb( 204, 102, 0);">Game Over</div>
+        <div style="color:rgb(255, 153, 0);">your Score</div>
+        <div style="color:rgb( 255, 153, 102);" id="endScore">0</div>
+        <button class="btn" onClick="reload()">Try Again</button>
+  </div>
+ 
     <script src="script.js"></script>
 </body>
 </html>
