@@ -113,18 +113,21 @@ if(key == 13){
      }
 }
 
+
+
 //move background function
 
 let backgroundImagePositionX = 0;  
 let moveBackgroundAnimationId = 0;
-
+let score = 0;
 function moveBackground()
 {
     backgroundImagePositionX= backgroundImagePositionX - 20;
     document.getElementById("background").style.backgroundPositionX = backgroundImagePositionX + "px";
-   // const xPosition = gif.offsetLeft;
-//     leftPosition += 1; // Adjust the speed as needed
-//    document.getElementById("boar_obs2").style.left = xPosition-40 + "px";
+   
+    score = score + 1;
+    //console.log(score);
+    document.getElementById("score").innerHTML = score;
 }
 
 //create obstacles function

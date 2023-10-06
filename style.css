@@ -26,7 +26,13 @@
     background-image: url("resources/boar_obs2.gif");
     background-size: contain;
     background-repeat: no-repeat;
-
+}
+.score{
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 35px;
+    margin-top: 40px;
+    position: absolute;
 }
 
    
