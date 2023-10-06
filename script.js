@@ -47,16 +47,18 @@ let girlMarginTop = 620;
     //fly
     if(jumpImageNumber <= 5)
      {
+       // console.log("up " + girlMarginTop )
         girlMarginTop = girlMarginTop - 40;
         girl.style.marginTop = girlMarginTop + "px";
      }
      //landing
-     if(jumpImageNumber >= 6)
+     else if(jumpImageNumber < 10)
      {
+        //console.log("down " + girlMarginTop )
         girlMarginTop = girlMarginTop + 40;
         girl.style.marginTop = girlMarginTop + "px";
      }
-     if(jumpImageNumber == 11){
+     else if(jumpImageNumber == 10){
         jumpImageNumber = 1;
         clearInterval(jumpAnimationNumber); //stop jumpAnimation when it is 11
         jumpAnimationNumber = 0;
@@ -94,7 +96,7 @@ if(key == 13){
      if(obsAnimationId == 0){
         obsAnimationId = setInterval(ObsAnimation,100); //calling obsAnimation function to start 100 miliseconds
      }
-  }
+    }
 
  //jump charactor with space bar
  if(key == 32){
@@ -104,7 +106,8 @@ if(key == 13){
     }
     if(moveBackgroundAnimationId == 0){
         moveBackgroundAnimationId = setInterval(moveBackground,100);    //calling moveBackground function
-     }  
+     } 
+    
     if(obsAnimationId == 0){
         obsAnimationId = setInterval(ObsAnimation,100); //calling obsAnimation function to start 100 miliseconds
      }
@@ -158,11 +161,11 @@ function ObsAnimation(){
         {
     let obs = document.getElementById("obs" + i);
     let currentMarginLeft =getComputedStyle(obs).marginLeft;
-    let newMarginLeft = parseInt(currentMarginLeft) - 25;
+    let newMarginLeft = parseInt(currentMarginLeft) - 35;
     obs.style.marginLeft = newMarginLeft + "px";
 
     if(newMarginLeft >= -100  & newMarginLeft <= 100){
-        if(girlMarginTop > 550){
+        if(girlMarginTop > 600){
         clearInterval(obsAnimationId);
 
         clearInterval(runAnimationNumber);
