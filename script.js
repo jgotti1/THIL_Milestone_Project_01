@@ -3,8 +3,8 @@
 
 const startSound = new Audio("resources/start1.mp3");
 startSound.loop = true;
-startSound.volume = 0.1;
-startSound.play();
+startSound.volume = 0.2; //control audio file volume
+startSound.play(); //play start sound
 //game over sound
 const gameOverSound = new Audio("resources/gameOver.mp3");
 
@@ -92,6 +92,7 @@ let girlMarginTop = 620;
     runImageNumber = 0;
     clearInterval(runAnimationNumber); //stop run animation
     jumpAnimationNumber = setInterval(jumpAnimation,100);//start jump animation
+    jumpSound.play(); //play jump sound
 }
 
 //run charactor with key press
