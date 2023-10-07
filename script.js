@@ -1,3 +1,19 @@
+//Load sound file
+//start sound
+
+let startSound = new Audio("");
+
+//run sound
+let runSound = new Audio("");
+runSound.loop = true;
+
+//jump sound
+let jumpSound = new Audio("");
+
+//dead sound
+let deadSound = new Audio("");
+
+
 //Idle animation function
 
 const girl = document.getElementById("girl");
@@ -14,7 +30,7 @@ function idleAnimation(){
 
 //Idle animation start funtion
 function idleAnimationStart(){
-idleAnimationNumber = setInterval(idleAnimation, 200);
+idleAnimationNumber = setInterval(idleAnimation, 100);
 }
 
 //run animaition function
@@ -63,7 +79,7 @@ let girlMarginTop = 620;
         clearInterval(jumpAnimationNumber); //stop jumpAnimation when it is 11
         jumpAnimationNumber = 0;
         runImageNumber = 0;
-        runAnimationStart(); //run charctor again
+        runAnimationStart(); //run charactor again
 
     }
     
@@ -126,8 +142,10 @@ function moveBackground()
     document.getElementById("background").style.backgroundPositionX = backgroundImagePositionX + "px";
    
     score = score + 1;
+    //let scoreString = "Score :";
+    //console.log(scoreString);
     //console.log(score);
-    document.getElementById("score").innerHTML = score;
+    document.getElementById("score").innerHTML ="Score : " + score;
 }
 
 //create obstacles function
@@ -206,5 +224,13 @@ function girlDeadAnimation()
 
 function reload()
 {
-    location.reload();//reload page again when button click
+    location.reload();//reload page again when Try again button click
+}
+function start()
+{
+    location.reload();
+}
+function intro()
+{
+    location.reload();
 }

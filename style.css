@@ -69,3 +69,23 @@
     cursor: pointer;
     color: orange;
 }
+
+.btn1
+{
+    width:300px;
+    height: 40px;
+    margin-top:50px ;
+    font-size: 20px;
+    font-weight: 1000;
+    background-color:gray ;
+    border:none ;
+    border-radius:20px;
+}
+.btn1:hover
+{
+    width:310px;
+    height: 45px;
+    background-color:aqua ;
+    cursor: pointer;
+    color: orange;
+}
