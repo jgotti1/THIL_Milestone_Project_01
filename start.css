@@ -4,7 +4,7 @@
 .homepage{
     width: 100%;
     height: 100vh;
-    background-image: url("resources/Background_1.jpg");
+    background-image: url("resources/start.avif");
     background-size: cover;
     background-repeat: repeat-x;
     overflow-x: hidden;

@@ -1,17 +1,18 @@
 //Load sound file
-//start sound
+//start background sound
 
-let startSound = new Audio("");
-
-//run sound
-let runSound = new Audio("");
-runSound.loop = true;
+const startSound = new Audio("resources/start1.mp3");
+startSound.loop = true;
+startSound.volume = 0.1;
+startSound.play();
+//game over sound
+const gameOverSound = new Audio("resources/gameOver.mp3");
 
 //jump sound
-let jumpSound = new Audio("");
+const jumpSound = new Audio("resources/jump.mp3");
 
 //dead sound
-let deadSound = new Audio("");
+const deadSound = new Audio("resources/dead.mp3");
 
 
 //Idle animation function
