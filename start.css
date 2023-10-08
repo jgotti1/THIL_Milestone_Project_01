@@ -17,7 +17,7 @@
     height: 370px;
     position: absolute;
     margin-top: 90px;
-    margin-left: 500px;
+    margin-left: 600px;
 
 }
 .btn1
@@ -31,7 +31,7 @@
   color:white;
   cursor: pointer;
   display: inline-block;
-  font-family: Arial;
+  font-family: 'Harrington', sans-serif;
   font-size: 30px;
   padding: 14px 40px;
   text-align: center;
@@ -40,6 +40,7 @@
   -moz-animation: glowing 1500ms infinite;
   -o-animation: glowing 1500ms infinite;
   animation: glowing 1500ms infinite;
+  
 }
 .btn2
 {
@@ -52,7 +53,7 @@
   color:white;
   cursor: pointer;
   display: inline-block;
-  font-family: Arial;
+  font-family: 'Harrington', sans-serif;
   font-size: 30px;
   padding: 14px 40px;
   text-align: center;

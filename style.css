@@ -47,6 +47,7 @@
     color: white;
     font-family: "Broadway";
     visibility: hidden;
+    font-family: 'Harrington', sans-serif;
 }
 /*--Button Styles--*/
 .btn {
@@ -60,21 +61,25 @@
     text-shadow: #f36602 1px 0 10px;
     height: 125px;
     width: 125px;
-    border: solid 1px #080808;
+    border: solid 3px #080808;
     border-radius: 175px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: 'Harrington', sans-serif;
+    font-weight: 800;
     cursor: pointer;
-    font-size: medium;
+    font-size:25px;
 }
 
   .btn:hover
 {
     background-color:#835C3B ;
     cursor: pointer;
+    color: #ebf8e1;
+
 }
 .btn1
 {
@@ -88,6 +93,7 @@
     /* border-radius:20px; */
     color: white;
     cursor: pointer;
+    font-family: 'Harrington', sans-serif;
 }
 .btn1:hover
 {
