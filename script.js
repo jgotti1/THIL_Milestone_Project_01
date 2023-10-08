@@ -2,11 +2,16 @@
 //start background sound
 
 const startSound = new Audio("resources/start1.mp3");
-startSound.loop = true;
-startSound.volume = 0.2; //control audio file volume
+startSound.loop = true; //continue sound track
+startSound.volume = 0.1; //control audio file volume
 startSound.play(); //play start sound
+
+//paly running sound
+const run = new Audio("resources/run.mp3");
+
 //game over sound
 const gameOverSound = new Audio("resources/gameOver.mp3");
+gameOverSound.volume = 0.1;
 
 //jump sound
 const jumpSound = new Audio("resources/jump.mp3");
@@ -14,19 +19,19 @@ const jumpSound = new Audio("resources/jump.mp3");
 //dead sound
 const deadSound = new Audio("resources/dead.mp3");
 
-
 //Idle animation function
 
-const girl = document.getElementById("girl");
+const girl = document.getElementById("girl"); //capture the charactor
 let idleImageNumber = 1;    //globle variables   
 let idleAnimationNumber = 0; //globle variables  
 
 function idleAnimation(){
+    startSound.play();
     idleImageNumber = idleImageNumber + 1;
-    if( idleImageNumber == 11){
+    if( idleImageNumber == 11){ //no of idle animated images
         idleImageNumber = 1;
     }
-    girl.src = "resources/idle (" + idleImageNumber + ").png";
+    girl.src = "resources/Idle " + "(" + idleImageNumber + ")"+".png";
 }
 
 //Idle animation start funtion
@@ -51,6 +56,8 @@ girl.src = "resources/Run (" + runImageNumber + ").png"; //link images related t
 function runAnimationStart(){
     runAnimationNumber = setInterval(runAnimation, 100);//calling runAnimation function
     clearInterval(idleAnimationNumber);//stop idleAnimation function when run AnimationStart
+    run.play(); //play run sound
+    run.loop = true;
 }
 
 //jump animation function
@@ -140,14 +147,14 @@ let moveBackgroundAnimationId = 0;
 let score = 0;
 function moveBackground()
 {
-    backgroundImagePositionX= backgroundImagePositionX - 20;
+    backgroundImagePositionX= backgroundImagePositionX - 20; //moving background image by 20 pixels each at a time
     document.getElementById("background").style.backgroundPositionX = backgroundImagePositionX + "px";
    
-    score = score + 1;
+    score = score + 1; //calculate score
     //let scoreString = "Score :";
     //console.log(scoreString);
     //console.log(score);
-    document.getElementById("score").innerHTML ="Score : " + score;
+    document.getElementById("score").innerHTML ="Score : " + score; //get and change the content of an element
 }
 
 //create obstacles function
@@ -157,38 +164,50 @@ let obsMarginLeft = 1920; //stop showing obstacles when game start
 
 function createObstacles()
 {
-    for (let i=0; i<=10; i++) //create 10 obstacles
+   
+    for (let i=0; i<=100; i++) //create 100 obstacles
         {
         
    let obs = document.createElement("div");//create javascript div 
    obs.className = "obs";//assign class name 
-   document.getElementById("background").appendChild(obs);
+   document.getElementById("background").appendChild(obs); //append obstacle to the background
    obs.style.marginLeft = obsMarginLeft + "px";
    obs.id ="obs" + i;
 
    //obsMarginLeft =obsMarginLeft + 1000; //add distance in between obstacles
-    if(i < 5)
+    if(i < 10)
     {
         obsMarginLeft = obsMarginLeft + 1000; 
     }
-    if(i >= 5)
+    if(i >= 10 & i < 20)
+    {
+        obsMarginLeft = obsMarginLeft + 800; 
+    }
+    if(i >= 20 & i < 50)
+    {
+        obsMarginLeft = obsMarginLeft + 650; 
+    }
+    if(i >= 50)
     {
         obsMarginLeft = obsMarginLeft + 500; 
     }
         }
+    
 }
 
 let obsAnimationId = 0;
 function ObsAnimation(){
-    for (let i=0; i<10; i++) 
+    for (let i=0; i<100; i++) // create 100 obstacles
         {
     let obs = document.getElementById("obs" + i);
     let currentMarginLeft =getComputedStyle(obs).marginLeft;
+    //let currentMarginRight  = getComputedStyle(obs).marginRight;
     let newMarginLeft = parseInt(currentMarginLeft) - 35;
     obs.style.marginLeft = newMarginLeft + "px";
 
-    if(newMarginLeft >= -100  & newMarginLeft <= 100){
+    if(newMarginLeft >= 300  & newMarginLeft <= 400){ //check if the charactor is touching the obstacles
         if(girlMarginTop > 600){
+            gameOver = true;
         clearInterval(obsAnimationId);
 
         clearInterval(runAnimationNumber);
@@ -221,7 +240,11 @@ function girlDeadAnimation()
         document.getElementById("gameOver").style.visibility ="visible"; //when dead visible end div
         document.getElementById("endScore").innerHTML = score; //get endScore div
     }
+    deadSound.play();
     girl.src = "resources/Dead (" + deadImageNumber + ").png"; //link images related to dead
+    deadSound.pause();
+    startSound.pause();
+    gameOverSound.play();
 }
 
 function reload()
@@ -236,3 +259,9 @@ function intro()
 {
     location.reload();
 }
+function startMusic()
+{
+    startSound.play();
+}
+let gameTitle = $(".name");
+gameTitle.fadeIn(5000).delay(300);

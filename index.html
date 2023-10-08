@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Milestone Project 01</title>
+    <title>Milestone Project 01:Browser Game</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="body" onload="idleAnimationStart(); createObstacles();"  onkeypress="keyCheck(event);">
   <div class="background" id="background">
        <img src="resources/Idle (1).png" class="girl" id="girl"/>
-        <div class="score" id="score">Score : 0</div>
+        <div class="score" id="score"><mark>Score : 0 </mark></div>
   </div>
 
   <div class="gameOver" id="gameOver">
         <div style="color:rgb( 204, 102, 0);">Game Over !</div>
-        <div style="color:rgb(255, 153, 0);">your Score</div>
-        <div style="color:rgb( 255, 153, 102);" id="endScore">0</div>
+        <br>
+        <div style="color:rgb(255, 153, 0);"><blink class="blink">your Score</blink></div>
+        <div style="color:rgba(28, 30, 162, 0.678);" id="endScore">0</div>
         <button class="btn" onClick="reload()">Try Again</button>
         <form action="start.html">
           <br>
-      <button onclick="start();" class="btn1">Home</button>
+      <button onclick="start();" class="btn1"><i class="fa fa-home"></i> Home</button>
       </form>
   </div>
  

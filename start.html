@@ -4,30 +4,28 @@
     <title>Game home page</title>
     <link rel="stylesheet" href="start.css">
 </head>
-<body onload="idleAnimationStart();">
+<body onload="idleAnimationStart(); startMusic();">
     <div class="homepage">
-    <h1 class="name">Adventure Girl</h1>
+    <h1 class="name">Adventure of Von</h1>
     <br>
     <div>
-    <img class="idle" src="resources/Idle (1).png">
+    <img class="idle" src="resources/Idle (1).png" id="girl">
+    <form action="introduction.html">
+        
+     <button onclick="intro();" class="btn1">Instruction</button>   
+    </form>
+    <form action="index.html">
+        
+    <button onclick="start();" class="btn2">Play Game</button>
+    </form>
     </div>
-    <div>
-        <form action="introduction.html">
-            <br>
-            <button onclick="intro();" class="btn1">Instruction</button>
-        </form>
-    </div> 
-    <div>
-        <form action="index.html">
-            <br>
-        <button onclick="start();" class="btn1">Play Game</button>
-        </form>
-    </div>
-    <div>
-        <p align="center"class="p1">Milestone Project 1: Browser Game | UCHI</p>
-        <p align="center" style=color:black><b><i>2023 -Thilini Dharmawardhana, LLC. All Rights Reserved'</b></i></p>
+   <br>
+    <div class="foot">
+        <h4>Milestone Project 1: Browser Game | The University of Chicago</h4>
+        <p><b><i>2023 © - Adventure of Von -created by Thilini Dharmawardhana. All Rights Reserved.</b></i></p>
     </div>
 </div>
+
     <script src="script.js"></script>
 </body>
 </html>
