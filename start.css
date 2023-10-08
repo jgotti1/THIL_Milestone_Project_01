@@ -2,7 +2,6 @@
     margin: 0px;
     
 }
-
 .homepage{
     width: 100%;
     height: 100vh;
@@ -11,8 +10,7 @@
     background-repeat: repeat-x;
     overflow-x: hidden;
     position: absolute;
-    background-color: #F2F3D1;
-    
+    background-color: #F2F3D1;    
 }
 .idle{
     width: 370px;

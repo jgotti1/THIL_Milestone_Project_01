@@ -20,7 +20,6 @@
 .obs{
     width: 150px;
     height: 150px;
-    /* background-color: black;  */
     position: absolute;
     margin-top: 790px;
     background-image: url("resources/dragon.gif");
@@ -70,7 +69,7 @@
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     cursor: pointer;
     font-size: medium;
-  }
+}
 
   .btn:hover
 {
@@ -96,7 +95,7 @@
 }
 .blink {
     animation: blink 2s infinite;
-  }
+}
   
   @keyframes blink {
     0% {
@@ -114,4 +113,4 @@
       transform: scale(1);
       opacity: 1;
     }
-  }
+}

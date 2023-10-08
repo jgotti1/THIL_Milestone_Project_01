@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Game home page</title>
-    <link rel="stylesheet" href="start.css">
+    <title>Milestone Project 01:Browser Game</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body onload="idleAnimationStart(); startMusic();">
-    <div class="homepage">
-    <h1 class="name">Adventure of Von</h1>
-    <br>
-    <div>
-    <img class="idle" src="resources/Idle (1).png" id="girl">
-    <form action="introduction.html">
-        
-     <button onclick="intro();" class="btn1">Instruction</button>   
-    </form>
-    <form action="index.html">
-        
-    <button onclick="start();" class="btn2">Play Game</button>
-    </form>
-    </div>
-   <br>
-    <div class="foot">
-        <h4>Milestone Project 1: Browser Game | The University of Chicago</h4>
-        <p><b><i>2023 © - Adventure of Von -Created by Thilini Dharmawardhana. All Rights Reserved.</b></i></p>
-    </div>
-</div>
+<body class="body" onload="idleAnimationStart(); createObstacles(); "  onkeypress="keyCheck(event);">
+  <div class="background" id="background">
+       <img src="resources/Idle (1).png" class="girl" id="girl"/>
+        <div class="score" id="score"><mark>Score : 0 </mark></div>
+  </div>
 
+  <div class="gameOver" id="gameOver">
+        <div style="color:rgb( 204, 102, 0);">Game Over !</div>
+        <br>
+        <div style="color:rgb(255, 153, 0);"><blink class="blink">your Score</blink></div>
+        <div style="color:rgba(28, 30, 162, 0.678);" id="endScore">0</div>
+        <button class="btn" onClick="reload()">Try Again</button>
+        <form action="index.html">
+          <br>
+      <button onclick="start();" class="btn1"><i class="fa fa-home"></i> Home</button>
+      </form>
+  </div>
+ 
     <script src="script.js"></script>
 </body>
 </html>
+

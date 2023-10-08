@@ -1,4 +1,4 @@
-//Load sound file
+//Load sound files
 //start background sound
 
 const startSound = new Audio("resources/start1.mp3");
