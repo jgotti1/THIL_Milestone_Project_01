@@ -57,7 +57,7 @@ function runAnimationStart(){
     runAnimationNumber = setInterval(runAnimation, 100);//calling runAnimation function
     clearInterval(idleAnimationNumber);//stop idleAnimation function when run AnimationStart
     run.play(); //play run sound
-    run.loop = true;
+    //run.loop = true;
 }
 
 //jump animation function
@@ -207,7 +207,7 @@ function ObsAnimation(){
 
     if(newMarginLeft >= 300  & newMarginLeft <= 400){ //check if the charactor is touching the obstacles
         if(girlMarginTop > 600){
-            gameOver = true;
+            //gameOver = true;
         clearInterval(obsAnimationId);
 
         clearInterval(runAnimationNumber);

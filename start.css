@@ -18,53 +18,66 @@
     width: 370px;
     height: 370px;
     position: absolute;
-    margin-top: 100px;
+    margin-top: 90px;
     margin-left: 500px;
 
 }
 .btn1
 {
-    width:300px;
-    height: 40px;
-    margin-top:180px ;
-    margin-left: 1000px;
-    font-size: 20px;
-    font-weight: 1000;
-    background-color:gray ;
-    border:none ;
-    border-radius:20px;
+  margin-top: 150px;
+  margin-left:1000px ;
+  background-color: #622F22;
+  -webkit-border-radius: 20px;
+  border-radius: 10px;
+  border: none;
+  color:white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 30px;
+  padding: 14px 40px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
 }
 .btn2
 {
-    width:300px;
-    height: 40px;
-    margin-top: 100px ;
-    margin-left: 1000px;
-    font-size: 20px;
-    font-weight: 1000;
-    background-color:gray ;
-    border:none ;
-    border-radius:20px;
+  margin-top: 90px;
+  margin-left:1000px ;
+  background-color: #622F22;
+  -webkit-border-radius: 20px;
+  border-radius: 10px;
+  border: none;
+  color:white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 30px;
+  padding: 14px 40px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
 }
 .btn1:hover
 {
-    width:300px;
-    height: 40px;
-    background-color:aqua ;
+    background-color:#835C3B ;
     cursor: pointer;
-    color: orange;
+    color:white;
 }
 .btn2:hover
 {
-    width:300px;
-    height: 40px;
-    background-color:aqua ;
+    background-color:#835C3B ;
     cursor: pointer;
-    color: orange;
+    color:white;
 }
 .name
-{
-    
+{  
     margin-top: 260px ;
     text-align: center;
     font-size: 60px;

@@ -49,37 +49,43 @@
     font-family: "Broadway";
     visibility: hidden;
 }
-
-.btn
-{
-    width:300px;
-    height: 40px;
-    margin-top:50px ;
-    font-size: 20px;
-    font-weight: 1000;
-    background-color:gray ;
-    border:none ;
-    border-radius:20px;
-}
-.btn:hover
-{
-    width:300px;
-    height: 40px;
-    background-color:aqua ;
+/*--Button Styles--*/
+.btn {
+    margin-top: 20px;
+    position: relative;
+    background-color: #f69d3c;
+    color: #0e0d0d;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: #f36602 1px 0 10px;
+    height: 125px;
+    width: 125px;
+    border: solid 1px #080808;
+    border-radius: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     cursor: pointer;
-    color: orange;
+    font-size: medium;
+  }
+
+  .btn:hover
+{
+    background-color:#835C3B ;
+    cursor: pointer;
 }
 .btn1
 {
-    width:200px;
-    height: 40px;
-    margin-top:100px ;
+    margin-top:60px ;
     margin-left: 40px;
     font-size: 20px;
     font-weight: 800;
     background-color:DodgerBlue ;
     border:none ;
-    padding: 10px 16px;
+    padding: 14px 40px;
     /* border-radius:20px; */
     color: white;
     cursor: pointer;
