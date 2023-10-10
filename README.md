@@ -11,18 +11,18 @@ A Adventure girl running 2D browser game where the objective is to move forward 
 
 ## Screenshots:
 
-![alt text](Screenshot1.png)
-![alt text](Screenshot2.png)
-![alt text](Screenshot3.png)
-![alt text](Screenshot4.png)
-![alt text](Screenshot5.png)
-![alt text](Screenshot6.png)
-![alt text](Screenshot7.png)
+1. ![alt text](Screenshot1.png)
+2. ![alt text](Screenshot2.png)
+3. ![alt text](Screenshot3.png)
+4. ![alt text](Screenshot4.png)
+5. ![alt text](Screenshot5.png)
+6. ![alt text](Screenshot6.png)
+7. ![alt text](Screenshot7.png)
 
-## How to play:
+## How to play: 
 
-1.	Open the following URL: https://thilinidharma.github.io/Milestone_Project_01/
-2.  Click ==Instruction== button to get instructions
+1.	Open the following URL: [title] https://thilinidharma.github.io/Milestone_Project_01/
+2.  Click ==nstruction== button to get instructions
 3.  Click ==Play button== to start the game
 4.	Press ==Enter== key to start the game and move forward.
 5.  Press ==space== to jump and avoid all the obstacles.
@@ -50,7 +50,6 @@ A Adventure girl running 2D browser game where the objective is to move forward 
 
 ## Technologies Used:
 
-
 - **HTML** styling language used to format and visually build upon the accompanying HTML.
 - **JavaScript** scripting language used to develop web pages and allows developers to create a dynamic and interactive experience for the user.
 - **Github**  Used to host the deployed repository of all previous versions of the build.
@@ -58,7 +57,6 @@ A Adventure girl running 2D browser game where the objective is to move forward 
 
 
 ## Difficulties:
-
 
 •	The challenges were many, but after lots of studying and with the knowledge acquired in the bootcamp, I managed to develop a simple and objective game. I had a lot of support and help from my instructors (thanks a lot **Megha Zavar** and **John Margotti**) to get it done.
 
@@ -71,6 +69,6 @@ A Adventure girl running 2D browser game where the objective is to move forward 
 - SoundsCrate-- Free music and sound effects  [title] https://sfx.productioncrate.com/
 - Bensound-- Free music  [title] https://www.bensound.com/
 
-
  [^1]: Milestone Project 1: Browser Game | Software development bootcamp | The University of Chicago
   [^1]:2023 © - Adventure of Von -Created by Thilini Dharmawardhana. All Rights Reserved.
+---
