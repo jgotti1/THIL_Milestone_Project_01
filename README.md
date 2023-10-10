@@ -3,7 +3,7 @@
 
 # Adventure of Von -2D browser game
 
-A Adventure girl running 2D browser game where the objective is to move forward then jump and avoiding obstacles to achieve a higher score. Once you hit the dobstacle then you will lose the game.
+A Adventure girl running 2D browser game where the objective is to move forward then jump and avoiding obstacles to achieve a higher score. Once you hit the obstacle then you will lose the game.
 
 •The game has 3 pages,
   1. Index.html 
