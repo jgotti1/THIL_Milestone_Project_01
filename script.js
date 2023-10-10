@@ -124,7 +124,7 @@ let girlMarginTop = 620;
         run.play(); //play run sound
     }
     
-    girl.src = "resources/jump (" +jumpImageNumber+ ").png"; //link images related to jump
+    girl.src = "./resources/jump (" +jumpImageNumber+ ").png"; //link images related to jump
  }
  //jump animation  start function   
  function jumpAnimationStart(){
