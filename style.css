@@ -1,5 +1,6 @@
 .body{
     margin: 0px;
+    position: relative;
 }
 .background{
     width: 100%;
@@ -8,7 +9,8 @@
     background-size: cover;
     background-repeat: repeat-x;
     overflow-x: hidden;
-    position: absolute;
+    position:absolute;
+    display:flex;
 }
 .girl
 {
@@ -16,6 +18,8 @@
     margin-top: 620px;
     margin-left: 300px;
     position: absolute;
+    display:flex;
+
 }
 .obs{
     width: 150px;
@@ -25,6 +29,7 @@
     background-image: url("resources/dragon.gif");
     background-size: contain;
     background-repeat: no-repeat;
+    display:flex;
 }
 .score{
     font-size: 50px;
@@ -32,6 +37,7 @@
     margin-left: 35px;
     margin-top: 40px;
     position: absolute;
+    display:flex;
 }
 .gameOver{
     width: 100%;
@@ -73,13 +79,11 @@
     cursor: pointer;
     font-size:25px;
 }
-
   .btn:hover
 {
     background-color:#835C3B ;
     cursor: pointer;
     color: #ebf8e1;
-
 }
 .btn1
 {

@@ -6,7 +6,7 @@ startSound.loop = true; //continue sound track
 startSound.volume = 0.1; //control audio file volume
 startSound.play(); //play start sound
 
-//paly running sound
+//running sound
 const run = new Audio("resources/run.mp3");
 
 //game over sound
@@ -19,8 +19,42 @@ const jumpSound = new Audio("resources/jump.mp3");
 //dead sound
 const deadSound = new Audio("resources/dead.mp3");
 
-//Idle animation function
+//Start-keyCheck
+function keyCheck(event){
+    //alert(event.which);
+    //enter =13
+    //space =32
+    
+    const key = event.which;
+    //run charactor with enter key press
+    if(key == 13){
+        if(runAnimationNumber == 0){
+           runAnimationStart();
+         }
+        if(moveBackgroundAnimationId == 0){
+           moveBackgroundAnimationId = setInterval(moveBackground,100);   //calling moveBackground function
+         }
+         if(obsAnimationId == 0){
+            obsAnimationId = setInterval(ObsAnimation,100); //calling obsAnimation function to start 100 miliseconds
+         }
+        }
+    
+     //jump charactor with space bar
+     if(key == 32){
+        if(jumpAnimationNumber == 0){
+           jumpAnimationStart();
+         }
+        }
+        if(moveBackgroundAnimationId == 0){
+            moveBackgroundAnimationId = setInterval(moveBackground,100);//calling moveBackground function
+         } 
+        
+        if(obsAnimationId == 0){
+            obsAnimationId = setInterval(ObsAnimation,100); //calling obsAnimation function to start 100 miliseconds
+         }
+    }
 
+//Idle animation function
 const girl = document.getElementById("girl"); //capture the charactor
 let idleImageNumber = 1;    //globle variables   
 let idleAnimationNumber = 0; //globle variables  
@@ -40,7 +74,6 @@ idleAnimationNumber = setInterval(idleAnimation, 100);
 }
 
 //run animaition function
-
 let runImageNumber = 1; //globle variables  
 let runAnimationNumber = 0; //globle variables  
 function runAnimation()
@@ -88,7 +121,7 @@ let girlMarginTop = 620;
         jumpAnimationNumber = 0;
         runImageNumber = 0;
         runAnimationStart(); //run charactor again
-
+        run.play(); //play run sound
     }
     
     girl.src = "resources/jump (" +jumpImageNumber+ ").png"; //link images related to jump
@@ -101,44 +134,6 @@ let girlMarginTop = 620;
     jumpAnimationNumber = setInterval(jumpAnimation,100);//start jump animation
     jumpSound.play(); //play jump sound
 }
-
-//run charactor with key press
-
-function keyCheck(event){
-//alert(event.which);
-//enter =13
-//space =32
-
-const key = event.which;
-//run charactor with enter key press
-if(key == 13){
-    if(runAnimationNumber == 0){
-       runAnimationStart();
-     }
-    if(moveBackgroundAnimationId == 0){
-       moveBackgroundAnimationId = setInterval(moveBackground,100);   //calling moveBackground function
-     }
-     if(obsAnimationId == 0){
-        obsAnimationId = setInterval(ObsAnimation,100); //calling obsAnimation function to start 100 miliseconds
-     }
-    }
-
- //jump charactor with space bar
- if(key == 32){
-    if(jumpAnimationNumber == 0){
-       jumpAnimationStart();
-     }
-    }
-    if(moveBackgroundAnimationId == 0){
-        moveBackgroundAnimationId = setInterval(moveBackground,100);    //calling moveBackground function
-     } 
-    
-    if(obsAnimationId == 0){
-        obsAnimationId = setInterval(ObsAnimation,100); //calling obsAnimation function to start 100 miliseconds
-     }
-}
-
-
 
 //move background function
 
@@ -161,10 +156,8 @@ function moveBackground()
 
  //let obsMarginLeft = 500;
 let obsMarginLeft = 1920; //stop showing obstacles when game start  
-
 function createObstacles()
 {
-   
     for (let i=0; i<=100; i++) //create 100 obstacles
         {
         
@@ -194,7 +187,7 @@ function createObstacles()
         }
     
 }
-
+//start-move obstacles
 let obsAnimationId = 0;
 function ObsAnimation(){
     for (let i=0; i<100; i++) // create 100 obstacles
@@ -263,5 +256,5 @@ function startMusic()
 {
     startSound.play();
 }
-let gameTitle = $(".name");
+let gameTitle = document.getElementById( "name" );
 gameTitle.fadeIn(5000).delay(300);
