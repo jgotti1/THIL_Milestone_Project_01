@@ -12,13 +12,13 @@ A Adventure girl running 2D browser game where the objective is to move forward 
 
 ## Screenshots:
 
-1. ![alt text](resources/Screenshot1.png)
-2. ![alt text](resources/Screenshot2.png)
-3. ![alt text](resources/Screenshot3.png)
-4. ![alt text](resources/Screenshot4.png)
-5. ![alt text](resources/Screenshot5.png)
-6. ![alt text](resources/Screenshot6.png)
-7. ![alt text](resources/Screenshot7.png)
+![alt text](resources/Screenshot1.png)
+![alt text](resources/Screenshot2.png)
+![alt text](resources/Screenshot3.png)
+![alt text](resources/Screenshot4.png)
+![alt text](resources/Screenshot5.png)
+![alt text](resources/Screenshot6.png)
+![alt text](resources/Screenshot7.png)
 
 ## How to play: 
 
